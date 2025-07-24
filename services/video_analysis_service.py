@@ -3,8 +3,8 @@ import time
 import requests
 import gdown
 import google.generativeai as genai
-from ai_backend.prompts.vkyc_prompt import VKYC_AGENT_ANALYSIS_PROMPT
-from ai_backend.utils.video_utils import is_url, is_gdrive_link
+from prompts.vkyc_prompt import VKYC_AGENT_ANALYSIS_PROMPT
+from utils.video_utils import is_url, is_gdrive_link
 
 class VideoAnalysisError(Exception):
     pass

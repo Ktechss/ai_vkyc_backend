@@ -2,7 +2,7 @@ import uuid
 import threading
 from fastapi import APIRouter, BackgroundTasks, HTTPException
 from pydantic import BaseModel
-from ai_backend.services.video_analysis_service import analyze_video, parse_analysis_report, VideoAnalysisError
+from services.video_analysis_service import analyze_video, parse_analysis_report, VideoAnalysisError
 
 router = APIRouter()
 
