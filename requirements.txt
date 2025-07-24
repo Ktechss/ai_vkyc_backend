@@ -13,3 +13,6 @@ tqdm>=4.64.0
 # Optional: For additional video processing capabilities
 opencv-python>=4.8.0
 Pillow>=10.0.0
+
+fastapi==0.110.0
+uvicorn[standard]==0.29.0
