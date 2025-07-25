@@ -87,5 +87,27 @@ Use **Markdown formatting** with:
 Excellent / Good / Needs Improvement / Failed
 
 ⏰ NOTE:
+Body Language can be ignored if the agent is present in the video. but it should not be ignored if the agent is eating something laughing or doing something else.
+
 Include all **timestamps** (e.g., 02:35) and follow **proper paragraph spacing** to make the report clean and review-friendly for compliance QA reviewers.
+
+At the end of your report, output a JSON object with the following fields:
+{
+  "video_filename": "",
+  "video_path": "",
+  "employee_id": "",
+  "call_date": "",
+  "call_duration": "",
+  "analysis_status": "",  // "Flagged" or "Pass"
+  "quality_score": 0,     // 1 to 100
+  "sop_compliance": "",
+  "language_issues": "",
+  "body_language_score": 0,
+  "id_card_visible": "",
+  "issues_found": "",
+  "analysis_details": "",
+  "created_at": "",
+  "updated_at": ""
+}
+Only fill in what you can infer from the video and your analysis. If a field is not available, leave it as an empty string or null.
 """
