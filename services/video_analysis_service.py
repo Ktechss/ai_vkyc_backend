@@ -24,6 +24,7 @@ Base = declarative_base()
 class QualityCheckVideo(Base):
     __tablename__ = 'quality_check_videos'
     id = Column(Integer, primary_key=True, index=True)
+    session_id = Column(String(64))  # Added session_id field
     video_filename = Column(String)
     video_path = Column(String)
     employee_id = Column(String)
@@ -156,6 +157,7 @@ def analyze_video(video_input, job_id, prompt=VKYC_AGENT_ANALYSIS_PROMPT, timeou
             else:
                 analysis_status = fields.get('analysis_status', '')
             db_record = QualityCheckVideo(
+                session_id=str(session_id),  # Insert session_id
                 video_filename=fields.get('video_filename', video_filename),
                 video_path=db_video_path,
                 employee_id=fields.get('employee_id', ''),
